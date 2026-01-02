@@ -44,23 +44,43 @@ body {
 }
 
 /* NAV */
-nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    padding: 18px;
-    text-align: center;
-    z-index: 1000;
+.navbar {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
 }
 
-nav a {
-    margin: 0 16px;
-    text-decoration: none;
-    font-weight: 600;
-    color: #0a6cf1;
+.logo {
+  height: 40px;
 }
+
+/* Links inline with logo */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: rgb(60, 90, 237);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* 🔽 Mobile view */
+@media (max-width: 768px) {
+  .nav-links a {
+    font-size: 13px;
+    display: flex;
+    gap: 20px;
+
+
+  }
+ 
+}
+
 
 /* HERO */
 header {
@@ -76,7 +96,7 @@ header {
 }
 
 .hero-content {
-    max-width: 800px;
+    
     animation: slideIn 1.2s ease;
 }
 
@@ -93,19 +113,20 @@ header {
 /* SECTIONS */
 section {
     padding: 120px 25px;
-    max-width: 1400px;
     margin: auto;
     animation: fadeUp 1s ease;
 }
 
 section h2 {
     font-size: 3rem;
+    
+
     color: #0a6cf1;
     margin-bottom: 30px;
 }
 
 section p {
-    max-width: 1100px;
+    
     margin-bottom: 18px;
     font-size: 1.1rem;
 }
@@ -272,6 +293,7 @@ footer {
     }
 }
 .wis h1{
+    margin-top: -100px;
     margin-bottom: -20px;
 }
 .wis p{
@@ -282,20 +304,51 @@ footer {
 .wis h2{
     margin-top: 0px;
 }
+
+#typing-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 8px 0; /* space between lines */
+}
+
+/* Optional blinking cursor */
+#typing-container p::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.details-summary {
+      display: inline;
+      cursor: pointer; /* 👈 this makes the finger icon appear */
+    }
+
+
 </style>
 </head>
 
 
 <body>
+<nav class="navbar">
+  <div class="nav-left">
+    <img src="./access/WhatsApp Image 2025-12-29 at 06.43.41.jpeg" alt="Adlnet Cleaning Logo" class="logo">
+  </div>
+    <ul class="nav-links" id="navLinks">
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
+    <a href="#home">Maison</a>
+    <a href="#about">Nous</a>
     <a href="#services">Services</a>
-    <a href="#process">Process</a>
-    <a href="#gallery">Gallery</a>
+    <a href="#process">Processus</a>
+    <a href="#gallery">Galerie</a>
     <a href="#contact">Contact</a>
+    </ul>
+
+
 </nav>
+
 
 <header id="home">
     <div class="hero-content">
@@ -303,13 +356,13 @@ footer {
         <h1>ADL Net </h1>
         <p>La propreté au service de votre performance</p> 
         
-        <h2>Nettoyage de bureaux professionnels fiable, discret et adapté à votre entreprise.</h2>
+        <p id="typing-container">Nettoyage de bureaux professionnels fiable discret et adapté à votre entreprise.</p>
         </div>
-        <p>
-            Chez ADL Net, nous sommes spécialisés dans le nettoyage de bureaux<br/> professionnels. Nous accompagnons les entreprises en leur offrant des espaces de travail propres, sains et soignés, <br/>favorisant le bien-être des employés et la performance au quotidien.
+        <p id="typing-container">
+            Chez ADL Net, nous sommes spécialisés dans le nettoyage de bureaux professionnels. Nous accompagnons les entreprises en leur offrant des espaces de travail propres, sains et soignés, favorisant le bien-être des employés et la performance au quotidien.
         </p>
-        <p>
-            Fiabilité, rigueur et discrétion sont au cœur de notre engagement. Chaque service est adapté à vos besoins,<br/> à votre horaire et à votre réalité d’entreprise.
+        <p id="typing-container">
+            Fiabilité, rigueur et discrétion sont au cœur de notre engagement. Chaque service est adapté à vos besoins, à votre horaire et à votre réalité d’entreprise.
         </p>
     </div>
     
@@ -321,6 +374,7 @@ footer {
 ADL Net est une entreprise locale spécialisée dans le nettoyage de bureaux professionnels.<br/> Forte d’une expérience en entretien ménager, sa fondatrice met à profit son sens du détail, <br/>sa rigueur et son professionnalisme au service des entreprises.
 </p>
 <p>Notre mission est simple : </p><h3>offrir des espaces de travail impeccables, <br/>dans un climat de confiance et de respect.</h3>
+<p>ADL Net est une entreprise locale fondée sur des valeurs de professionnalisme, de confiance et de rigueur.<br/> Forte d’une expérience en entretien ménager, sa fondatrice met son sens du détail et son sérieux au service des entreprises.</p>
 <p>Notre objectif : offrir un environnement de travail propre, sain et agréable, jour après jour.</p>
 <h3>Nos valeurs</h3>
 <ul>
@@ -334,22 +388,13 @@ ADL Net est une entreprise locale spécialisée dans le nettoyage de bureaux pro
 <section id="services" class="services">
 <h2>Nettoyage de bureaux professionnels</h2>
 
+<p>Notre objectif : offrir un environnement de travail propre, sain et agréable, jour après jour.</p>
 <div class="services-grid">
-<div class="service-card">
-<h3>Nos services incluent :</h3>
-<ul>
-    <li>Nettoyage quotidien des espaces de travail</li>
-    <li>Vidage des poubelles et recyclage</li>
-    <li>Entretien des de salles bain</li>
-    <li>Nettoyage des planchers</li>
-    <li>Nettoyage des aires communes et cuisines</li>
-</ul>
 
-</div>
 <div class="service-card">
 <h3>ADL Net – La propreté au service de votre performance</h3>
 <p>
-ADL Net est une entreprise spécialisée dans le <span style="font-weight: bold; color:#0a6cf1">nettoyage de bureaux professionnels</span>. <br/>Nous accompagnons les entreprises en offrant des espaces de travail propres, sains et soignés, favorisant le bien-être <br>des employés et la performance au quotidien.
+ Nous accompagnons les entreprises en offrant des espaces de travail propres, sains et soignés, favorisant le bien-être <br>des employés et la performance au quotidien.
 </p>
 <p>Grâce à une approche rigoureuse, discrète et personnalisée, <br/>nous adaptons nos services à vos besoins et à vos horaires.</p>
 </div>
@@ -366,7 +411,6 @@ Nous offrons un service complet et fiable d’entretien de bureaux pour les PME,
     <li>Entretien des salles de bain</li>
     <li>Aires communes et cuisines</li>
 </ul>
-
 </div>
 <div class="service-card">
 <h3>Texte SEO principal</h3>
@@ -383,33 +427,51 @@ Nous offrons des services d’entretien fiables, rigoureux et adaptés aux besoi
     <li>service de nettoyage entreprise</li>
     <li>entretien de bureaux</li>
 </ul>
-<p> À placer dans les titres, descriptions et bas de page.</p>
+<p>À placer dans les titres, descriptions et bas de page.</p>
 </div>
 <div class="service-card">
 <h3>3️⃣ FAQ CLIENTS </h3>
 <div>
-<h3> À qui s’adressent vos services ?</h3>
+<h3>À qui s’adressent vos services ?</h3>
+<details class="details-summary">
+  <summary></summary>
 <p><u>Nos services s’adressent aux entreprises, PME, organismes et espaces professionnels.</u></p>
+
+</details>
 </div>
 
 <div>
 <h3>Offrez-vous des contrats réguliers ?</h3>
+<details class="details-summary">
+  <summary></summary>
 <p><u>Oui. Nous proposons des contrats hebdomadaires, bihebdomadaires ou mensuels selon vos besoins.</u></p>
+
+</details>
 </div>
 
 <div>
-<h3>À quels moments intervenez-vous ?</h3>
-<p><u>De jour, de soir, de nuit ou la fin de semaine, selon votre préférence.</u></p>
+<h3> À quels moments intervenez-vous ?</h3>
+<details class="details-summary">
+  <summary></summary>
+  <p><u>De jour, de soir, de nuit ou la fin de semaine, selon votre préférence.</u></p>
+
+</details>
 </div>
 
 <div>
-<h3> Utilisez-vous des produits spécifiques ?</h3>
-<p><u>Nous utilisons des produits efficaces et sécuritaires, avec option écoresponsable sur demande.</u></p>
+<h3>Utilisez-vous des produits spécifiques ?</h3>
+<details class="details-summary">
+  <summary></summary>
+  <p><u> Nous utilisons des produits écoresponsable</u></p>
+</details>
 </div>
 
 <div>
-<h3> Proposez-vous une évaluation gratuite ?</h3>
+<h3>Proposez-vous une évaluation gratuite ?</h3>
+<details class="details-summary">
+  <summary></summary>
 <p><u>Oui, une évaluation gratuite et sans engagement est offerte.</u></p>
+</details>
 </div>
 
 
@@ -423,32 +485,32 @@ Nous offrons des services d’entretien fiables, rigoureux et adaptés aux besoi
 Choisir ADL Net, c’est choisir un service de nettoyage :
 </p>
 <ul>
-    <li>✔ Professionnel et rigoureux</li>
-    <li>✔ Fiable et ponctuel</li>
-    <li>✔ Discret et respectueux de vos espaces</li>
-    <li>✔ Flexible et personnalisé</li>
+    <li>Professionnel et rigoureux</li>
+    <li>Fiable et ponctuel</li>
+    <li>Discret et respectueux de vos espaces</li>
+    <li>Flexible et personnalisé</li>
 </ul>
 <p>Nous mettons un point d’honneur à offrir une propreté constante et de qualité,<br/> contribuant à un environnement de travail agréable et productif.</p>
 </section>
 
 <section id="process">
 <h2>Demandez votre soumission gratuite</h2>
-<p>Vous êtes à la recherche d’un service de nettoyage de bureaux fiable et professionnel ?<br/>
+<p>Vous êtes à la recherche d’un service de nettoyage de bureaux fiable et professionnel ?
 ADL Net vous propose une évaluation gratuite et sans engagement afin de bien comprendre vos besoins.
 </p>
 <h2>Pourquoi choisir ADL Net ?</h2>
 <div class="process-steps">
-<div class="step">✔ Service personnalisé</div>
-<div class="step">✔ Horaire flexible</div>
-<div class="step">✔ Propreté constante</div>
-<div class="step">✔ Approche professionnelle et discrète</div>
+<div class="step">Service personnalisé</div>
+<div class="step">Horaire flexible</div>
+<div class="step">Propreté constante</div>
+<div class="step">Approche professionnelle et discrète</div>
 </div>
 </section>
 
 <section id="gallery">
 <h2>Notre travail en action</h2>
 <div class="gallery">
-<img src="./access/WhatsApp Image 2025-12-29 at 06.45.25.jpeg">
+
 <img src="./access/WhatsApp Image 2025-12-29 at 09.41.57.jpeg">
 <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
 <img src="access/WhatsApp Image 2025-12-29 at 09.47.30.jpeg">
@@ -461,16 +523,14 @@ ADL Net vous propose une évaluation gratuite et sans engagement afin de bien co
 <p>
 📞 Téléphone : 581 980 2712 
 <br>📧 Courriel : infos@adlnet.ca 
-<br>📍 Service offert dans votre région
+<br>📍 Service offert dans la région de la capital Nationale
 </p>
 </section>
 
 <footer>
 <p>© 2025 ADL Net — Nettoyage de bureaux professionnel</p>
 </footer>
-
+<script src="./script.js"></script>
 </body>
 </html>
-
-
 
